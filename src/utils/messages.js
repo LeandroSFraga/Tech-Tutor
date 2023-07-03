@@ -13,7 +13,7 @@ Então, vamos começar essa <strong>jornada</strong>? Estou animado para ver tod
 Gostaria de lembrar que eu sou apenas uma ferramenta de suporte, e que para aprimorar o aprendizado é necessário que você pratique cada conteúdo aprendido! Para facilitar o uso do Tech Tutor recomendo que você conheça alguns comandos! Digite /help para mais informações! 😉📚
 `;
 
-const SELECT_OPTION_MESSAGE = `Certo! Por onde devemos começar? Você pode selecionar um módulo específico que esteja em dúvida ou começar a trilha desde o início caso esteja iniciando agora:  `;
+const FIRST_OPTIONS_MESSAGE = `Certo! Por onde devemos começar? Você pode selecionar um módulo específico que esteja em dúvida ou começar a trilha desde o início caso esteja iniciando agora:  `;
 
 const HELP_MESSAGE = `ℹ️🤖 <strong>Ajuda</strong> 
 
@@ -39,6 +39,20 @@ Você também pode acessar algum conteúdo sem ter que passar pelo fluxo apenas 
 
 Fique à vontade para explorar e aproveitar ao máximo o conhecimento disponível! Estou aqui para te ajudar no que precisar. 😊👩‍💻`;
 
+const ERROR_MESSAGE = `🤔 Desculpe, mas não consegui encontrar uma resposta para a sua pergunta.
+
+Recomendo que você entre em contato com um de nossos professores ou com a equipe gestora do IFS. Eles terão prazer em ajudar você!
+
+Você pode enviar um e-mail para os seguintes contatos:
+- <a href="mailto:reitoria@ifs.edu.br">reitoria@ifs.edu.br</a>
+- <a href="mailto:cbsi.lagarto@ifs.edu.br">cbsi.lagarto@ifs.edu.br</a>
+- <a href="mailto:cre.lagarto@ifs.edu.br">cre.lagarto@ifs.edu.br</a>
+
+Também recomendo que você visite o <a href="http://www.ifs.edu.br/">site do IFS</a> para obter mais informações sobre o instituto.
+
+Espero ter ajudado!
+`;
+
 const ALGORITMO_CONCEPT = [
   'Antes de começar a programar de fato é interessante entender o conceito de algoritmo! \n Segundo ASSCENCIO, 1999: Algoritmo é a descrição de uma  sequencia de passos que deve ser seguida para a realização de uma tarefa.',
   'Resposta 2',
@@ -59,6 +73,7 @@ export {
   ALGORITMO_CONCEPT,
   WELCOME_MESSAGE,
   HELP_MESSAGE,
-  SELECT_OPTION_MESSAGE,
+  FIRST_OPTIONS_MESSAGE,
   ALGORITMO_EXAMPLE,
+  ERROR_MESSAGE,
 };

@@ -2,7 +2,7 @@ import {
   ALGORITMO_CONCEPT,
   ALGORITMO_EXAMPLE,
   HELP_MESSAGE,
-  SELECT_OPTION_MESSAGE,
+  FIRST_OPTIONS_MESSAGE,
   WELCOME_MESSAGE,
 } from '../utils/messages.js';
 import { DISCIPLINAS, FUNDAMENTOS_DE_PROGRAMACAO } from '../utils/options.js';
@@ -31,8 +31,8 @@ const helpController = (ctx) => {
   });
 };
 
-const selectOptionController = (ctx) => {
-  ctx.reply(SELECT_OPTION_MESSAGE, {
+const selectFirstOptionsController = (ctx) => {
+  ctx.reply(FIRST_OPTIONS_MESSAGE, {
     reply_markup: {
       inline_keyboard: [
         [
@@ -140,7 +140,7 @@ const AlgoritmoExemploController = (ctx, AlgoritmoExemploCont) => {
 
 export {
   welcomeController,
-  selectOptionController,
+  selectFirstOptionsController,
   FundamentosDeProgramacaoController,
   helpController,
   AlgoritmoController,
