@@ -1,11 +1,9 @@
 import {
-  ALGORITMO_CONCEPT,
-  ALGORITMO_EXAMPLE,
   HELP_MESSAGE,
   FIRST_OPTIONS_MESSAGE,
   WELCOME_MESSAGE,
 } from '../utils/messages.js';
-import { DISCIPLINAS, FUNDAMENTOS_DE_PROGRAMACAO } from '../utils/options.js';
+import { DISCIPLINAS } from '../utils/options.js';
 
 const welcomeController = async (ctx) => {
   try {
@@ -64,85 +62,4 @@ const selectFirstOptionsController = (ctx) => {
   });
 };
 
-const FundamentosDeProgramacaoController = (ctx) => {
-  ctx.reply(FUNDAMENTOS_DE_PROGRAMACAO.MensagemPrincipal, {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: FUNDAMENTOS_DE_PROGRAMACAO.Algoritmos.text,
-            callback_data: FUNDAMENTOS_DE_PROGRAMACAO.Algoritmos.callback,
-          },
-        ],
-      ],
-    },
-    parse_mode: 'HTML',
-  });
-};
-
-const AlgoritmoController = (ctx, AlgoritmoCont) => {
-  ctx.reply(ALGORITMO_CONCEPT[AlgoritmoCont], {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: 'Outra Resposta',
-            callback_data: FUNDAMENTOS_DE_PROGRAMACAO.Algoritmos.callback,
-          },
-        ],
-        [
-          {
-            text: 'Resposta gerada por IA',
-            callback_data: '/IAAlgoritmo',
-          },
-        ],
-        [
-          {
-            text: 'Exemplo',
-            callback_data: '/ExemploAlgoritmo',
-          },
-        ],
-      ],
-    },
-  });
-};
-
-const AlgoritmoExemploController = (ctx, AlgoritmoExemploCont) => {
-  const codeMessage =
-    'Exemplo de Algoritmo:\n```\n' +
-    ALGORITMO_EXAMPLE[AlgoritmoExemploCont] +
-    '\n```';
-  ctx.replyWithMarkdown(codeMessage, {
-    reply_markup: {
-      inline_keyboard: [
-        [
-          {
-            text: 'Outra Resposta',
-            callback_data: FUNDAMENTOS_DE_PROGRAMACAO.Algoritmos.callback,
-          },
-        ],
-        [
-          {
-            text: 'Resposta gerada por IA',
-            callback_data: '/IAAlgoritmo',
-          },
-        ],
-        [
-          {
-            text: 'Exemplo',
-            callback_data: '/ExemploAlgoritmo',
-          },
-        ],
-      ],
-    },
-  });
-};
-
-export {
-  welcomeController,
-  selectFirstOptionsController,
-  FundamentosDeProgramacaoController,
-  helpController,
-  AlgoritmoController,
-  AlgoritmoExemploController,
-};
+export { welcomeController, selectFirstOptionsController, helpController };

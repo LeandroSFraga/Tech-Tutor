@@ -21,9 +21,7 @@ Olá! Essa é a seção de ajuda do Tech Tutor.
 
 Aqui embaixo você encontra as principais informações de como utilizar o bot! 
 
-Você pode interagir comigo através de <strong>cliques</strong> nas opções disponíveis para acessar as principais áreas de ensino, o bot é alimentado com diversos conceitos e exemplos reunidos de diversos autores da área. Fique à vontade para explorar por conta própria e aprender mais sobre programação. 🖱️📚
-
-Só será necessário digitar apenas para utilizar comandos precedidos pela '/', você pode visualizar os comandos logo abaixo. ⌨
+Você pode interagir comigo através de <strong>cliques</strong>, <strong>comandos</strong> ou <strong>fazendo perguntas</strong> para acessar as principais perguntas, o bot é alimentado com diversos conceitos e exemplos reunidos de diversos autores da área. Fique à vontade para explorar por conta própria e aprender mais sobre programação. 🖱️📚
 
 📚🔍 Aqui estão os principais <strong>comandos globais</strong> disponíveis:
 
@@ -39,6 +37,15 @@ Você também pode acessar algum conteúdo sem ter que passar pelo fluxo apenas 
 
 Fique à vontade para explorar e aproveitar ao máximo o conhecimento disponível! Estou aqui para te ajudar no que precisar. 😊👩‍💻`;
 
+const REFERENCES_MESSAGE = `
+Claro! Aqui está a mensagem com as referências usadas nos textos:
+
+"📚💡 Referências utilizadas:
+
+1. Ascencio, Ana Fernanda Gomes, e Edilene Aparecida Veneruchi de Campos. "Fundamentos da Programação de Computadores." Pearson Education Brasil, 1999.
+2. PUGA, Sandra; Rissetti, Gerson. Lógica de programação e estruturas de dados, com aplicações em Java. Pearson 290 ISBN 9788543019147.
+`;
+
 const ERROR_MESSAGE = `🤔 Desculpe, mas não consegui encontrar uma resposta para a sua pergunta.
 
 Recomendo que você entre em contato com um de nossos professores ou com a equipe gestora do IFS. Eles terão prazer em ajudar você!
@@ -53,27 +60,4 @@ Também recomendo que você visite o <a href="http://www.ifs.edu.br/">site do IF
 Espero ter ajudado!
 `;
 
-const ALGORITMO_CONCEPT = [
-  'Antes de começar a programar de fato é interessante entender o conceito de algoritmo! \n Segundo ASSCENCIO, 1999: Algoritmo é a descrição de uma  sequencia de passos que deve ser seguida para a realização de uma tarefa.',
-  'Resposta 2',
-  'Resposta 3',
-];
-
-const ALGORITMO_EXAMPLE = [
-  ` function somar(a, b) {
-    return a + b;
-  }
-
-  const resultado = somar(2, 3);
-  console.log(resultado);`,
-  `return(a)`,
-];
-
-export {
-  ALGORITMO_CONCEPT,
-  WELCOME_MESSAGE,
-  HELP_MESSAGE,
-  FIRST_OPTIONS_MESSAGE,
-  ALGORITMO_EXAMPLE,
-  ERROR_MESSAGE,
-};
+export { WELCOME_MESSAGE, HELP_MESSAGE, FIRST_OPTIONS_MESSAGE, ERROR_MESSAGE };
