@@ -42,8 +42,9 @@ Claro! Aqui está a mensagem com as referências usadas nos textos:
 
 "📚💡 Referências utilizadas:
 
-1. Ascencio, Ana Fernanda Gomes, e Edilene Aparecida Veneruchi de Campos. "Fundamentos da Programação de Computadores." Pearson Education Brasil, 1999.
+1. ASCENCIO, Ana Fernanda Gomes, e CAMPOS, Edilene Aparecida Veneruchi. "Fundamentos da Programação de Computadores." Pearson Education Brasil, 1999.
 2. PUGA, Sandra; Rissetti, Gerson. Lógica de programação e estruturas de dados, com aplicações em Java. Pearson 290 ISBN 9788543019147.
+3. RICARTE, Ivan Luiz Marques. Programação Orientada a Objetos: Uma Abordagem com Java. Unicamp
 `;
 
 const ERROR_MESSAGE = `🤔 Desculpe, mas não consegui encontrar uma resposta para a sua pergunta.

@@ -7,6 +7,18 @@ import {
   CONSTANTES_EXAMPLE,
 } from '../utils/fundamentos-programacao/constantes.js';
 import {
+  ENTRADA_SAIDA_CONCEPT,
+  ENTRADA_SAIDA_EXAMPLE,
+} from '../utils/fundamentos-programacao/entradaSaida.js';
+import {
+  ESTRUTURA_CONTROLE_CONCEPT,
+  ESTRUTURA_CONTROLE_EXAMPLE,
+} from '../utils/fundamentos-programacao/estruturaControle.js';
+import {
+  MATRIZES_CONCEPT,
+  MATRIZES_EXAMPLE,
+} from '../utils/fundamentos-programacao/matrizes.js';
+import {
   OPERADORES_CONCEPT,
   OPERADORES_EXAMPLE,
 } from '../utils/fundamentos-programacao/operadores.js';
@@ -14,6 +26,10 @@ import {
   VARIAVEIS_CONCEPT,
   VARIAVEIS_EXAMPLE,
 } from '../utils/fundamentos-programacao/variaveis.js';
+import {
+  VETORES_CONCEPT,
+  VETORES_EXAMPLE,
+} from '../utils/fundamentos-programacao/vetores.js';
 import { FUNDAMENTOS_DE_PROGRAMACAO } from '../utils/options.js';
 
 const FundamentosDeProgramacaoController = (ctx) => {
@@ -42,12 +58,6 @@ const FundamentosDeProgramacaoController = (ctx) => {
           {
             text: FUNDAMENTOS_DE_PROGRAMACAO.Operadores.text,
             callback_data: FUNDAMENTOS_DE_PROGRAMACAO.Operadores.callback,
-          },
-        ],
-        [
-          {
-            text: FUNDAMENTOS_DE_PROGRAMACAO.Expressoes.text,
-            callback_data: FUNDAMENTOS_DE_PROGRAMACAO.Expressoes.callback,
           },
         ],
         [
@@ -138,6 +148,62 @@ const OperadoresController = (ctx, OperadoresCont) => {
     },
   });
 };
+const EntradaSaidaController = (ctx, EntradaSaidaCont) => {
+  ctx.reply(ENTRADA_SAIDA_CONCEPT[EntradaSaidaCont], {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Exemplo',
+            callback_data: '/ExemploEntradaSaida',
+          },
+        ],
+      ],
+    },
+  });
+};
+const EstruturaControleController = (ctx, EstruturaControle) => {
+  ctx.reply(ESTRUTURA_CONTROLE_CONCEPT[EstruturaControle], {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Exemplo',
+            callback_data: '/ExemploEstruturaControle',
+          },
+        ],
+      ],
+    },
+  });
+};
+const VetoresController = (ctx, VetoresCont) => {
+  ctx.reply(VETORES_CONCEPT[VetoresCont], {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Exemplo',
+            callback_data: '/ExemploVetores',
+          },
+        ],
+      ],
+    },
+  });
+};
+const MatrizesController = (ctx, MatrizesCont) => {
+  ctx.reply(MATRIZES_CONCEPT[MatrizesCont], {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Exemplo',
+            callback_data: '/ExemploMatrizes',
+          },
+        ],
+      ],
+    },
+  });
+};
 
 const AlgoritmoExemploController = (ctx, AlgoritmoExemploCont) => {
   const codeMessage = ALGORITMO_EXAMPLE[AlgoritmoExemploCont];
@@ -199,6 +265,66 @@ const OperadoresExemploController = (ctx, OperadoresExemploCont) => {
     },
   });
 };
+const EntradaSaidaExemploController = (ctx, EntradaSaidaCont) => {
+  const codeMessage = ENTRADA_SAIDA_EXAMPLE[EntradaSaidaCont];
+  ctx.replyWithMarkdown(codeMessage, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Explorar mais exemplos',
+            callback_data: '/ExemploEntradaSaida',
+          },
+        ],
+      ],
+    },
+  });
+};
+const EstruturaControleExemploController = (ctx, EstruturaControle) => {
+  const codeMessage = ESTRUTURA_CONTROLE_EXAMPLE[EstruturaControle];
+  ctx.replyWithMarkdown(codeMessage, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Explorar mais exemplos',
+            callback_data: '/ExemploEstruturaControle',
+          },
+        ],
+      ],
+    },
+  });
+};
+const VetoresExemploController = (ctx, VetoresCont) => {
+  const codeMessage = VETORES_EXAMPLE[VetoresCont];
+  ctx.replyWithMarkdown(codeMessage, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Explorar mais exemplos',
+            callback_data: '/ExemploVetores',
+          },
+        ],
+      ],
+    },
+  });
+};
+const MatrizesExemploController = (ctx, MatrizesCont) => {
+  const codeMessage = MATRIZES_EXAMPLE[MatrizesCont];
+  ctx.replyWithMarkdown(codeMessage, {
+    reply_markup: {
+      inline_keyboard: [
+        [
+          {
+            text: 'Explorar mais exemplos',
+            callback_data: '/ExemploMatrizes',
+          },
+        ],
+      ],
+    },
+  });
+};
 
 export {
   FundamentosDeProgramacaoController,
@@ -210,4 +336,12 @@ export {
   VariaveisExemploController,
   OperadoresController,
   OperadoresExemploController,
+  EntradaSaidaController,
+  EntradaSaidaExemploController,
+  EstruturaControleController,
+  EstruturaControleExemploController,
+  VetoresController,
+  VetoresExemploController,
+  MatrizesController,
+  MatrizesExemploController,
 };

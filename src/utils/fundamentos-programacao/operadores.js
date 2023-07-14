@@ -1,7 +1,7 @@
 const OPERADORES_CONCEPT = [
   `🤖 Ei, vamos falar sobre os mestres dos cálculos e comparações, os incríveis operadores? 🧮🔍
 
-De acordo com o conceito do PUGA, os operadores são como as ferramentas mágicas que usamos para criar expressões de cálculo, comparação, condição e atribuição. São como as peças de um quebra-cabeça matemágico! ✨🔢
+De acordo com o conceito do PUGA E RISSETTI, os operadores são como as ferramentas mágicas que usamos para criar expressões de cálculo, comparação, condição e atribuição. São como as peças de um quebra-cabeça matemágico! ✨🔢
 
 Temos vários tipos de operadores para explorar. Vamos lá:
 
@@ -37,7 +37,7 @@ const OPERADORES_EXAMPLE = [
   fimse
 FimAlgoritmo` +
     '\n```\n',
-  `👩‍💻 Agora, vamos explorar um exemplo de algoritmo em uma linguagem de programação! Digamos que você está desenvolvendo um programa em Java para calcular a área de um retângulo. Você pode utilizar operadores aritméticos para realizar esse cálculo. Por exemplo, você pode utilizar o operador de multiplicação (*) para calcular a área, fazendo 'area = largura * altura'. Assim, o programa irá calcular a área do retângulo com base nos valores de largura e altura informados pelo usuário! 📐🔢` +
+  `👩‍💻 Agora, vamos explorar um exemplo de algoritmo em uma linguagem de programação! Digamos que você está desenvolvendo um programa em Java para calcular a área de um retângulo. Você pode utilizar operadores aritméticos para realizar esse cálculo. Por exemplo, você pode utilizar o operador de multiplicação (\*) para calcular a área, fazendo 'area = largura \* altura'. Assim, o programa irá calcular a área do retângulo com base nos valores de largura e altura informados pelo usuário! 📐🔢` +
     '\n```java\n' +
     `import java.util.Scanner;
 

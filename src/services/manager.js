@@ -50,13 +50,13 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
 (async () => {
   // SAUDAÇÕES
 
-  manager.addDocument('pt', 'tchau por agora', 'greetings.bye');
-  manager.addDocument('pt', 'tchau se cuida', 'greetings.bye');
-  manager.addDocument('pt', 'okay, vejo você depois', 'greetings.bye');
-  manager.addDocument('pt', 'tchau por agora', 'greetings.bye');
+  manager.addDocument('pt', 'tchau', 'greetings.bye');
+  manager.addDocument('pt', 'se cuida', 'greetings.bye');
+  manager.addDocument('pt', 'vejo você depois', 'greetings.bye');
   manager.addDocument('pt', 'eu deveria ir', 'greetings.bye');
   manager.addDocument('pt', 'olá', 'greetings.hello');
   manager.addDocument('pt', 'oi', 'greetings.hello');
+  manager.addDocument('pt', 'Hey', 'greetings.hello');
 
   // BIBLIOTECA
 
@@ -98,23 +98,16 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
 
   //BIBLIOTECAS VIRTUAIS
 
-  manager.addDocument('pt', 'O que é o PERGAMUM?', 'pergamum');
-  manager.addDocument('pt', 'Qual é a função do PERGAMUM?', 'pergamum');
-  manager.addDocument('pt', 'Como o PERGAMUM funciona?', 'pergamum');
-  manager.addDocument('pt', 'O que posso fazer no PERGAMUM?', 'pergamum');
+  manager.addDocument('pt', 'O que é PERGAMUM?', 'pergamum');
+  manager.addDocument('pt', 'Qual a função do PERGAMUM?', 'pergamum');
   manager.addDocument(
     'pt',
-    'O que é a Biblioteca Virtual Pearson?',
+    'O que é Biblioteca Virtual Pearson?',
     'biblioteca.pearson'
   );
   manager.addDocument(
     'pt',
-    'Qual é a função da Biblioteca Virtual Pearson?',
-    'biblioteca.pearson'
-  );
-  manager.addDocument(
-    'pt',
-    'Como funciona a Biblioteca Virtual Pearson?',
+    'Biblioteca Virtual Pearson?',
     'biblioteca.pearson'
   );
   manager.addDocument(
@@ -127,15 +120,10 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
 
   manager.addDocument(
     'pt',
-    'O que é o conceito de "discente"?',
+    'Qual o conceito de "discente"?',
     'conceito.discente'
   );
   manager.addDocument('pt', 'O que é um discente?', 'conceito.discente');
-  manager.addDocument(
-    'pt',
-    'Quem é considerado discente?',
-    'conceito.discente'
-  );
   manager.addDocument('pt', 'Definição de discente', 'conceito.discente');
 
   //DIREITOS DISCENTE
@@ -147,18 +135,13 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
   );
   manager.addDocument(
     'pt',
-    'Como saber mais sobre os direitos e deveres do discente?',
-    'info.direitos.discente'
-  );
-  manager.addDocument(
-    'pt',
     'Informações sobre direitos e deveres do discente',
     'info.direitos.discente'
   );
 
   //MONITORIA
 
-  manager.addDocument('pt', 'O que é a monitoria?', 'conceito.monitoria');
+  manager.addDocument('pt', 'O que é monitoria?', 'conceito.monitoria');
   manager.addDocument(
     'pt',
     'O que significa ser monitor?',
@@ -196,11 +179,6 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
   );
   manager.addDocument(
     'pt',
-    'Onde posso encontrar mais informações sobre média e frequência?',
-    'info.media.frequencia'
-  );
-  manager.addDocument(
-    'pt',
     'Como saber mais sobre média e frequência?',
     'info.media.frequencia'
   );
@@ -213,17 +191,7 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
   //JUBILAMENTO
 
   manager.addDocument('pt', 'O que é o jubilamento?', 'conceito.jubilamento');
-  manager.addDocument(
-    'pt',
-    'Qual é o significado de jubilamento?',
-    'conceito.jubilamento'
-  );
   manager.addDocument('pt', 'Definição de jubilamento', 'conceito.jubilamento');
-  manager.addDocument(
-    'pt',
-    'Onde posso obter mais informações sobre o jubilamento?',
-    'info.jubilamento'
-  );
   manager.addDocument(
     'pt',
     'Como saber mais sobre o jubilamento?',
@@ -244,11 +212,6 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
   );
   manager.addDocument('pt', 'Qual é o objetivo do Enade?', 'conceito.enade');
   manager.addDocument('pt', 'Definição de Enade', 'conceito.enade');
-  manager.addDocument(
-    'pt',
-    'Onde posso encontrar mais informações sobre o Enade?',
-    'info.enade'
-  );
   manager.addDocument('pt', 'Como saber mais sobre o Enade?', 'info.enade');
   manager.addDocument('pt', 'Informações sobre o Enade', 'info.enade');
 
@@ -268,11 +231,6 @@ const manager = new NlpManager({ languages: ['pt'], forceNER: true });
     'pt',
     'Definição de Empresa Júnior',
     'conceito.empresa.junior'
-  );
-  manager.addDocument(
-    'pt',
-    'Onde posso obter mais informações sobre Empresa Júnior?',
-    'info.empresa.junior'
   );
   manager.addDocument(
     'pt',

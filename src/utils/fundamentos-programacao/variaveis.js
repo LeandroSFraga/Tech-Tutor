@@ -1,7 +1,7 @@
 const VARIAVEIS_CONCEPT = [
   `🤖 Olá! Vamos falar sobre as estrelas do mundo da programação, as famosas variáveis? ✨🌟
 
-  De acordo com o conceito do PUGA, as variáveis são como pequenos baús que usamos para guardar valores desconhecidos, mas necessários para resolver problemas. Elas são como pequenas gavetinhas que podem ser alteradas de acordo com a situação. Dessa forma, as variáveis armazenam valores temporariamente, como uma parada rápida para abastecer durante uma aventura emocionante! 🚀💼
+  De acordo com o conceito do PUGA E RISSETTI, as variáveis são como pequenos baús que usamos para guardar valores desconhecidos, mas necessários para resolver problemas. Elas são como pequenas gavetinhas que podem ser alteradas de acordo com a situação. Dessa forma, as variáveis armazenam valores temporariamente, como uma parada rápida para abastecer durante uma aventura emocionante! 🚀💼
   
   Quando traduzimos um algoritmo para uma linguagem de programação, as variáveis também têm uma função especial. Elas guardam temporariamente os dados na memória RAM do computador, como uma prateleira onde colocamos itens importantes para usar durante o processamento e resolver o problema em questão. Afinal, todo herói precisa de uma mochila cheia de ferramentas, não é mesmo? 💻🔋
   

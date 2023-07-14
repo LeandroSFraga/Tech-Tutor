@@ -3,7 +3,7 @@ const CONSTANTES_CONCEPT = [
 
 Então, imagine que as constantes são como os pilares mágicos e imutáveis do nosso código. Elas são valores especiais que não sofrem alterações ao longo do desenvolvimento do algoritmo ou da execução do programa. É como se fossem as estrelas fixas no céu noturno, sempre lá, firmes e confiáveis. 🌟🔒
 
-De acordo com o autor oficial PUGA, as constantes são esses valores que permanecem consistentes durante toda a nossa aventura no mundo da programação. Elas nos ajudam a evitar mudanças indesejadas e nos dão a tranquilidade de saber que certas coisas são fixas e seguras. 💪🔐
+De acordo com o autor oficial PUGA E RISSETTI, as constantes são esses valores que permanecem consistentes durante toda a nossa aventura no mundo da programação. Elas nos ajudam a evitar mudanças indesejadas e nos dão a tranquilidade de saber que certas coisas são fixas e seguras. 💪🔐
 
 Pense nas constantes como aqueles ingredientes secretos em uma receita mágica! Você sabe que eles não vão mudar e podem confiar neles para obter sempre o mesmo resultado delicioso. 🍲🔥
 

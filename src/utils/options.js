@@ -1,14 +1,14 @@
 const FUNDAMENTOS_DE_PROGRAMACAO = {
   MensagemPrincipal: `
     <strong>Módulo Inicial de Programação</strong> 📚💻
+
+Bem-vindo(a) ao primeiro módulo de conteúdos! Neste estágio, você mergulhará nos fundamentos essenciais da programação. Vamos explorar conceitos teóricos e práticos, como lógica, conceitos de variáveis, condicionais, laços de repetição, vetores e muito mais. 🧠💡
     
-    Bem-vindo(a) ao primeiro módulo de conteúdos! Neste estágio, você mergulhará nos fundamentos essenciais da programação. Vamos explorar conceitos teóricos e práticos, como lógica, conceitos de variáveis, condicionais, laços de repetição, vetores e muito mais. 🧠💡
+Prepare-se para adquirir um conhecimento sólido e essencial para construir suas habilidades como programador(a). Seja você iniciante na programação ou já com algum conhecimento, é recomendado seguir a trilha em ordem e evitar pular conteúdos para um aprendizado completo e consistente. 🚀📖
     
-    Prepare-se para adquirir um conhecimento sólido e essencial para construir suas habilidades como programador(a). Seja você iniciante na programação ou já com algum conhecimento, é recomendado seguir a trilha em ordem e evitar pular conteúdos para um aprendizado completo e consistente. 🚀📖
-    
-    Estou aqui para te auxiliar em cada passo desse processo de aprendizagem. Sinta-se à vontade para explorar e aproveitar ao máximo o conteúdo disponível. Se surgirem dúvidas, não hesite em me perguntar! Estou pronto para te ajudar. 🙌👩‍💻`,
+Estou aqui para te auxiliar em cada passo desse processo de aprendizagem. Sinta-se à vontade para explorar e aproveitar ao máximo o conteúdo disponível. Se surgirem dúvidas, não hesite em me perguntar! Estou pronto para te ajudar. 🙌👩‍💻`,
   Algoritmos: {
-    text: 'algoritmos',
+    text: 'Algoritmos',
     callback: '/Algoritmos',
   },
   Constantes: {
