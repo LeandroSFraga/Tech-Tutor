@@ -5,6 +5,9 @@ import {
   welcomeController,
   selectFirstOptionsController,
   helpController,
+  topicosController,
+  referecesController,
+  conteudosController,
 } from './src/controllers/botController.js';
 import { ERROR_MESSAGE } from './src/utils/messages.js';
 import { manager } from './src/services/manager.js';
@@ -32,6 +35,8 @@ import {
   VetoresExemploController,
 } from './src/controllers/fundamentosProgramacao.js';
 import {
+  ESTRUTURA_DE_DADOS_I,
+  ESTRUTURA_DE_DADOS_II,
   FUNDAMENTOS_DE_PROGRAMACAO,
   PARADIGMA_ORIENTADO_A_OBJETOS,
 } from './src/utils/options.js';
@@ -142,6 +147,83 @@ import {
   EXCESSOES_CONCEPT,
   EXCESSOES_EXAMPLE,
 } from './src/utils/paradiga-orientado-objetos/excessoes.js';
+import {
+  RECURSIVIDADE_CONCEPT,
+  RECURSIVIDADE_EXAMPLE,
+} from './src/utils/estrutura-de-dados-I/recursividade.js';
+import {
+  LISTAS_CONCEPT,
+  LISTAS_EXAMPLE,
+} from './src/utils/estrutura-de-dados-I/listas.js';
+import {
+  LISTAS_ENCADEADAS_CONCEPT,
+  LISTAS_ENCADEADAS_EXAMPLE,
+} from './src/utils/estrutura-de-dados-I/listas-encadeadas.js';
+import {
+  PILHAS_CONCEPT,
+  PILHAS_EXAMPLE,
+} from './src/utils/estrutura-de-dados-I/pilhas.js';
+import {
+  FILAS_CONCEPT,
+  FILAS_EXAMPLE,
+} from './src/utils/estrutura-de-dados-I/filas.js';
+import { ORDENACAO_EXAMPLE } from './src/utils/estrutura-de-dados-I/algoritmos-ordenacao.js';
+import {
+  EstruturaDeDadosIController,
+  ListasController,
+  RecursividadeController,
+  AlgoritmosOrdenacaoController,
+  AlgoritmosOrdenacaoExemploController,
+  FilasController,
+  FilasExemploController,
+  ListasEncadeadasController,
+  ListasEncadeadasExemploController,
+  ListasExemploController,
+  PilhasController,
+  PilhasExemploController,
+  RecursividadeExemploController,
+} from './src/controllers/estruturaDadosI.js';
+import {
+  ArvoreAVLController,
+  ArvoreAVLExemploController,
+  ArvoreBController,
+  ArvoreBExemploController,
+  ArvoreBinariaBuscaController,
+  ArvoreBinariaBuscaExemploController,
+  ArvoreController,
+  ArvoreVermelhoPretoController,
+  ArvoreVermelhoPretoExemploController,
+  EstruturaDeDadosIIController,
+  HeapController,
+  HeapExemploController,
+  TabelaHashController,
+  TabelaHashExemploController,
+} from './src/controllers/estruturaDadosII.js';
+import { ARVORE_CONCEPT } from './src/utils/estrutura-de-dados-II/arvore.js';
+import {
+  ARVORE_BINARIA_BUSCA_CONCEPT,
+  ARVORE_BINARIA_BUSCA_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/arvore-binaria-busca.js';
+import {
+  ARVORE_AVL_CONCEPT,
+  ARVORE_AVL_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/arvore-avl.js';
+import {
+  ARVORE_VERMELHO_PRETO_CONCEPT,
+  ARVORE_VERMELHO_PRETO_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/arvore-vermelho-preto.js';
+import {
+  ARVORE_B_CONCEPT,
+  ARVORE_B_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/arvore-b.js';
+import {
+  HEAP_CONCEPT,
+  HEAP_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/heap.js';
+import {
+  TABELAS_HASH_CONCEPT,
+  TABELAS_HASH_EXAMPLE,
+} from './src/utils/estrutura-de-dados-II/tabela-hash.js';
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
 
@@ -186,6 +268,33 @@ let InterfaceExemploCont = 0;
 let ExcessoesCont = 0;
 let ExcessoesExemploCont = 0;
 
+let RecursividadeCont = 0;
+let RecursividadeExemploCont = 0;
+let ListasCont = 0;
+let ListasExemploCont = 0;
+let ListasEncadeadasCont = 0;
+let ListasEncadeadasExemploCont = 0;
+let PilhasCont = 0;
+let PilhasExemploCont = 0;
+let FilasCont = 0;
+let FilasExemploCont = 0;
+let AlgoritmosOrdenacaoCont = 0;
+let AlgoritmosOrdenacaoExemploCont = 0;
+
+let ArvoresCont = 0;
+let ArvoreBinariaBuscaCont = 0;
+let ArvoreBinariaBuscaExemploCont = 0;
+let ArvoreAVLCont = 0;
+let ArvoreAVLExemploCont = 0;
+let ArvoreVermelhoPretoCont = 0;
+let ArvoreVermelhoPretoExemploCont = 0;
+let ArvoreBCont = 0;
+let ArvoreBExemploCont = 0;
+let HeapCont = 0;
+let HeapExemploCont = 0;
+let TabelaHashCont = 0;
+let TabelaHashExemploCont = 0;
+
 manager.train();
 manager.save();
 
@@ -201,10 +310,7 @@ async function manageMessage(message) {
 bot.start(welcomeController);
 bot.help(helpController);
 
-bot.command('Disciplinas', selectFirstOptionsController);
-bot.command('FundamentosDeProgramacao', FundamentosDeProgramacaoController);
-
-bot.on('text', async (ctx) => {
+const handleMessageNLP = async (ctx) => {
   const message = ctx.update.message.text;
   try {
     const resposta = await manageMessage(message);
@@ -220,7 +326,113 @@ bot.on('text', async (ctx) => {
   } catch (error) {
     console.log('Ocorreu um erro:', error);
   }
-});
+};
+
+bot.command('modulos', selectFirstOptionsController);
+bot.command('conteudos', conteudosController);
+
+bot.command('FundamentosDeProgramacao', FundamentosDeProgramacaoController);
+bot.command('ParadigmaOrientadoAObjetos', FundamentosDeProgramacaoController);
+bot.command('EstruturaDeDadosI', EstruturaDeDadosIController);
+bot.command('EstruturaDeDadosII', EstruturaDeDadosIIController);
+
+bot.command('topicos', topicosController);
+bot.command('referencias', referecesController);
+
+bot.command('Algoritmo', (ctx) => AlgoritmoController(ctx, AlgoritmoCont));
+bot.command('Constantes', (ctx) => ConstantesController(ctx, ConstantesCont));
+bot.command('Variaveis', (ctx) => VariaveisController(ctx, VariaveisCont));
+bot.command('Operadores', (ctx) => OperadoresController(ctx, OperadoresCont));
+bot.command('ComandosES', (ctx) =>
+  EntradaSaidaController(ctx, EntradaSaidaCont)
+);
+bot.command('EstruturasControle', (ctx) =>
+  EstruturaControleController(ctx, EstruturaControleCont)
+);
+bot.command('Vetores', (ctx) => VetoresController(ctx, VetoresCont));
+bot.command('Matrizes', (ctx) => MatrizesController(ctx, MatrizesCont));
+bot.command('Classes', (ctx) => ClassesController(ctx, ClassesCont));
+bot.command('Objetos', (ctx) => ObjetosController(ctx, ObjetosCont));
+bot.command('Construtores', (ctx) =>
+  ConstrutoresController(ctx, ConstrutoresCont)
+);
+bot.command('Atributos', (ctx) => AtributosController(ctx, AtributosCont));
+bot.command('Metodos', (ctx) => MetodosController(ctx, MetodosCont));
+bot.command('Encapsulamento', (ctx) =>
+  EncapsulamentoController(ctx, EncapsulamentoCont)
+);
+bot.command('Heranca', (ctx) => HerancaController(ctx, HerancaCont));
+bot.command('Polimorfismo', (ctx) =>
+  PolimorfismoController(ctx, PolimorfismoCont)
+);
+bot.command('ClasseAbstrata', (ctx) =>
+  ClasseAbstrataController(ctx, ClasseAbstrataCont)
+);
+bot.command('Interface', (ctx) => InterfaceController(ctx, InterfaceCont));
+bot.command('TratamentoExcecao', (ctx) =>
+  ExcessoesController(ctx, ExcessoesCont)
+);
+bot.command('Recursividade', (ctx) =>
+  RecursividadeController(ctx, RecursividadeCont)
+);
+bot.command('ListasLineares', (ctx) => ListasController(ctx, ListasCont));
+bot.command('ListasEncadeadas', (ctx) =>
+  ListasEncadeadasController(ctx, ListasEncadeadasCont)
+);
+bot.command('Pilha', (ctx) => PilhasController(ctx, PilhasCont));
+bot.command('Fila', (ctx) => FilasController(ctx, FilasCont));
+bot.command('AlgoritmosOrdenacao', (ctx) =>
+  AlgoritmosOrdenacaoController(ctx, AlgoritmosOrdenacaoCont)
+);
+bot.command('Arvore', (ctx) => ArvoreController(ctx, ArvoresCont));
+bot.command('ArvoreBinariaBusca', (ctx) =>
+  ArvoreBinariaBuscaController(ctx, ArvoreBinariaBuscaCont)
+);
+bot.command('ArvoreAVL', (ctx) => ArvoreAVLController(ctx, ArvoreAVLCont));
+bot.command('ArvoreVermelhoPreto', (ctx) =>
+  ArvoreVermelhoPretoController(ctx, ArvoreVermelhoPretoCont)
+);
+bot.command('ArvoreB', (ctx) => ArvoreBController(ctx, ArvoreBCont));
+bot.command('Heap', (ctx) => HeapController(ctx, HeapCont));
+bot.command('TabelaHash', (ctx) => TabelaHashController(ctx, TabelaHashCont));
+
+bot.command('RegrasBiblioteca', (ctx) => handleMessageNLP(ctx));
+bot.command('CadastroBiblioteca', (ctx) => handleMessageNLP(ctx));
+bot.command('Pearson', (ctx) => handleMessageNLP(ctx));
+bot.command('Pergamum', (ctx) => handleMessageNLP(ctx));
+bot.command('Discente', (ctx) => handleMessageNLP(ctx));
+bot.command('DireitosDiscentes', (ctx) => handleMessageNLP(ctx));
+bot.command('Monitoria', (ctx) => handleMessageNLP(ctx));
+bot.command('InformacoesMonitoria', (ctx) => handleMessageNLP(ctx));
+bot.command('RequisitosAprovacao', (ctx) => handleMessageNLP(ctx));
+bot.command('MediaFrequencia', (ctx) => handleMessageNLP(ctx));
+bot.command('Jubilamento', (ctx) => handleMessageNLP(ctx));
+bot.command('InformacoesJubilamento', (ctx) => handleMessageNLP(ctx));
+bot.command('Enade', (ctx) => handleMessageNLP(ctx));
+bot.command('InformacoesEnade', (ctx) => handleMessageNLP(ctx));
+bot.command('EmpresaJunior', (ctx) => handleMessageNLP(ctx));
+bot.command('InformacoesEmpresaJunior', (ctx) => handleMessageNLP(ctx));
+bot.command('Docente', (ctx) => handleMessageNLP(ctx));
+bot.command('ListaDocentes', (ctx) => handleMessageNLP(ctx));
+bot.command('DireitosDocentes', (ctx) => handleMessageNLP(ctx));
+bot.command('Coordenacao', (ctx) => handleMessageNLP(ctx));
+bot.command('HistoriaIFS', (ctx) => handleMessageNLP(ctx));
+bot.command('HistoriaCampusLagarto', (ctx) => handleMessageNLP(ctx));
+bot.command('SistemasInformacao', (ctx) => handleMessageNLP(ctx));
+bot.command('IRA', (ctx) => handleMessageNLP(ctx));
+bot.command('MEC', (ctx) => handleMessageNLP(ctx));
+bot.command('ROD', (ctx) => handleMessageNLP(ctx));
+bot.command('PPC', (ctx) => handleMessageNLP(ctx));
+bot.command('SIGAA', (ctx) => handleMessageNLP(ctx));
+bot.command('AvaliacaoInstitucional', (ctx) => handleMessageNLP(ctx));
+bot.command('DisciplinasOptativas', (ctx) => handleMessageNLP(ctx));
+bot.command('TCC', (ctx) => handleMessageNLP(ctx));
+bot.command('Estagio', (ctx) => handleMessageNLP(ctx));
+bot.command('AtividadesComplementares', (ctx) => handleMessageNLP(ctx));
+bot.command('MatrizCurricular', (ctx) => handleMessageNLP(ctx));
+bot.command('AlteracoesPPC', (ctx) => handleMessageNLP(ctx));
+
+bot.on('text', (ctx) => handleMessageNLP(ctx));
 
 bot.on('callback_query', (ctx) => {
   const selectedOption = ctx.callbackQuery.data;
@@ -234,6 +446,12 @@ bot.on('callback_query', (ctx) => {
       break;
     case '/ParadigmaOrientadoAObjetos':
       ParadigmaOrientadoAObjetosController(ctx);
+      break;
+    case '/EstruturaDeDadosI':
+      EstruturaDeDadosIController(ctx);
+      break;
+    case '/EstruturaDeDadosII':
+      EstruturaDeDadosIIController(ctx);
       break;
     case FUNDAMENTOS_DE_PROGRAMACAO.Algoritmos.callback:
       AlgoritmoController(ctx, AlgoritmoCont);
@@ -432,17 +650,144 @@ bot.on('callback_query', (ctx) => {
         (ExcessoesExemploCont + 1) % EXCESSOES_EXAMPLE.length;
       break;
 
-    // case '/ParadigmaOrientadoAObjetos':
-    //   ctx.reply(selectedOption);
-    // case '/EstruturaDeDadosI':
-    //   ctx.reply(selectedOption);
-    // case '/EstruturaDeDadosII':
-    //   ctx.reply(selectedOption);
+    case ESTRUTURA_DE_DADOS_I.Recursividade.callback:
+      RecursividadeController(ctx, RecursividadeCont);
+      RecursividadeCont =
+        (RecursividadeCont + 1) % RECURSIVIDADE_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_I.Listas.callback:
+      ListasController(ctx, ListasCont);
+      ListasCont = (ListasCont + 1) % LISTAS_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_I.ListasEncadeadas.callback:
+      ListasEncadeadasController(ctx, ListasEncadeadasCont);
+      ListasEncadeadasCont =
+        (ListasEncadeadasCont + 1) % LISTAS_ENCADEADAS_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_I.Pilhas.callback:
+      PilhasController(ctx, PilhasCont);
+      PilhasCont = (PilhasCont + 1) % PILHAS_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_I.Filas.callback:
+      FilasController(ctx, FilasCont);
+      FilasCont = (FilasCont + 1) % FILAS_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_I.AlgoritmosOrdenacao.callback:
+      AlgoritmosOrdenacaoController(ctx, AlgoritmosOrdenacaoCont);
+      AlgoritmosOrdenacaoCont =
+        (AlgoritmosOrdenacaoCont + 1) % OBJETOS_CONCEPT.length;
+      break;
+
+    case '/ExemploRecursividade':
+      RecursividadeExemploController(ctx, RecursividadeExemploCont);
+      RecursividadeExemploCont =
+        (RecursividadeExemploCont + 1) % RECURSIVIDADE_EXAMPLE.length;
+      break;
+
+    case '/ExemploListas':
+      ListasExemploController(ctx, ListasExemploCont);
+      ListasExemploCont = (ListasExemploCont + 1) % LISTAS_EXAMPLE.length;
+      break;
+
+    case '/ExemploListasEncadeadas':
+      ListasEncadeadasExemploController(ctx, ListasEncadeadasExemploCont);
+      ListasEncadeadasExemploCont =
+        (ListasEncadeadasExemploCont + 1) % LISTAS_ENCADEADAS_EXAMPLE.length;
+      break;
+
+    case '/ExemploPilhas':
+      PilhasExemploController(ctx, PilhasExemploCont);
+      PilhasExemploCont = (PilhasExemploCont + 1) % PILHAS_EXAMPLE.length;
+      break;
+
+    case '/ExemploFilas':
+      FilasExemploController(ctx, FilasExemploCont);
+      FilasExemploCont = (FilasExemploCont + 1) % FILAS_EXAMPLE.length;
+      break;
+
+    case '/ExemploAlgoritmosOrdenacao':
+      AlgoritmosOrdenacaoExemploController(ctx, AlgoritmosOrdenacaoExemploCont);
+      AlgoritmosOrdenacaoExemploCont =
+        (AlgoritmosOrdenacaoExemploCont + 1) % ORDENACAO_EXAMPLE.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.Arvore.callback:
+      ArvoreController(ctx, ArvoresCont);
+      ArvoresCont = (ArvoresCont + 1) % ARVORE_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.ArvoreBinariaBusca.callback:
+      ArvoreBinariaBuscaController(ctx, ArvoreBinariaBuscaCont);
+      ArvoreBinariaBuscaCont =
+        (ArvoreBinariaBuscaCont + 1) % ARVORE_BINARIA_BUSCA_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.ArvoreAVL.callback:
+      ArvoreAVLController(ctx, ArvoreAVLCont);
+      ArvoreAVLCont = (ArvoreAVLCont + 1) % ARVORE_AVL_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.ArvoreVermelhoPreto.callback:
+      ArvoreVermelhoPretoController(ctx, ArvoreVermelhoPretoCont);
+      ArvoreVermelhoPretoCont =
+        (ArvoreVermelhoPretoCont + 1) % ARVORE_VERMELHO_PRETO_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.ArvoreB.callback:
+      ArvoreBController(ctx, ArvoreBCont);
+      ArvoreBCont = (ArvoreBCont + 1) % ARVORE_B_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.Heap.callback:
+      HeapController(ctx, HeapCont);
+      HeapCont = (HeapCont + 1) % HEAP_CONCEPT.length;
+      break;
+
+    case ESTRUTURA_DE_DADOS_II.TabelaHash.callback:
+      TabelaHashController(ctx, TabelaHashCont);
+      TabelaHashCont = (TabelaHashCont + 1) % TABELAS_HASH_CONCEPT.length;
+      break;
+    case '/ExemploArvoreBinariaBusca':
+      ArvoreBinariaBuscaExemploController(ctx, ArvoreBinariaBuscaExemploCont);
+      ArvoreBinariaBuscaExemploCont =
+        (ArvoreBinariaBuscaExemploCont + 1) %
+        ARVORE_BINARIA_BUSCA_EXAMPLE.length;
+      break;
+
+    case '/ExemploArvoreAVL':
+      ArvoreAVLExemploController(ctx, ArvoreAVLExemploCont);
+      ArvoreAVLExemploCont =
+        (ArvoreAVLExemploCont + 1) % ARVORE_AVL_EXAMPLE.length;
+      break;
+
+    case '/ExemploArvoreVermelhoPreto':
+      ArvoreVermelhoPretoExemploController(ctx, ArvoreVermelhoPretoExemploCont);
+      ArvoreVermelhoPretoExemploCont =
+        (ArvoreVermelhoPretoExemploCont + 1) %
+        ARVORE_VERMELHO_PRETO_EXAMPLE.length;
+      break;
+
+    case '/ExemploArvoreB':
+      ArvoreBExemploController(ctx, ArvoreBExemploCont);
+      ArvoreBExemploCont = (ArvoreBExemploCont + 1) % ARVORE_B_EXAMPLE.length;
+      break;
+
+    case '/ExemploHeap':
+      HeapExemploController(ctx, HeapExemploCont);
+      HeapExemploCont = (HeapExemploCont + 1) % HEAP_EXAMPLE.length;
+      break;
+
+    case '/ExemploTabelaHash':
+      TabelaHashExemploController(ctx, TabelaHashExemploCont);
+      TabelaHashExemploCont =
+        (TabelaHashExemploCont + 1) % TABELAS_HASH_EXAMPLE.length;
+      break;
   }
 });
 
 bot.launch();
-
-// // Enable graceful stop
-// process.once('SIGINT', () => bot.stop('SIGINT'));
-// process.once('SIGTERM', () => bot.stop('SIGTERM'));

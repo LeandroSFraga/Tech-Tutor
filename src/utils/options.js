@@ -144,9 +144,9 @@ Bem-vindo(a) ao módulo de Estrutura de Dados II! Neste estágio avançado, merg
     text: 'Árvore AVL',
     callback: '/ArvoreAVL',
   },
-  ArvoreVeremelhoPreto: {
-    text: 'Arvore Veremelho-Preto',
-    callback: '/ArvoreVeremelhoPreto',
+  ArvoreVermelhoPreto: {
+    text: 'Arvore Vermelho-Preto',
+    callback: '/ArvoreVermelhoPreto',
   },
   ArvoreB: {
     text: 'Arvore B e B+',

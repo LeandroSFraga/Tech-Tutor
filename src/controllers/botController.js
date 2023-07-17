@@ -2,6 +2,9 @@ import {
   HELP_MESSAGE,
   FIRST_OPTIONS_MESSAGE,
   WELCOME_MESSAGE,
+  TOPICOS_MESSAGE,
+  REFERENCES_MESSAGE,
+  CONTEUDOS_MESSAGE,
 } from '../utils/messages.js';
 import { DISCIPLINAS } from '../utils/options.js';
 
@@ -25,6 +28,24 @@ const welcomeController = async (ctx) => {
 
 const helpController = (ctx) => {
   ctx.reply(HELP_MESSAGE, {
+    parse_mode: 'HTML',
+  });
+};
+
+const topicosController = (ctx) => {
+  ctx.reply(TOPICOS_MESSAGE, {
+    parse_mode: 'HTML',
+  });
+};
+
+const referecesController = (ctx) => {
+  ctx.reply(REFERENCES_MESSAGE, {
+    parse_mode: 'HTML',
+  });
+};
+
+const conteudosController = (ctx) => {
+  ctx.reply(CONTEUDOS_MESSAGE, {
     parse_mode: 'HTML',
   });
 };
@@ -62,4 +83,11 @@ const selectFirstOptionsController = (ctx) => {
   });
 };
 
-export { welcomeController, selectFirstOptionsController, helpController };
+export {
+  welcomeController,
+  selectFirstOptionsController,
+  helpController,
+  topicosController,
+  referecesController,
+  conteudosController,
+};
