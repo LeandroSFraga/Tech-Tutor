@@ -10,13 +10,6 @@ Nosso chatbot possui as seguintes funcionalidades principais:
 
 2. **Informação sobre Conteúdos de Programação**: Além de esclarecer termos, o bot também é capaz de fornecer conceitos e exemplos relacionados aos conteúdos abordados nas disciplinas de programação do curso de BSI. Isso permitirá que os estudantes aprofundem seus conhecimentos em linguagens de programação, algoritmos, estruturas de dados, entre outros temas importantes.
 
-##  Screenshots 📷
-
-![Captura de tela de 2023-07-17 12-35-42](https://github.com/LeandroSFraga/Tech-Tutor/assets/71570108/e7054ee6-0e36-4d56-a860-adc112a052a9)
-
-![Captura de tela de 2023-07-17 16-45-34](https://github.com/LeandroSFraga/Tech-Tutor/assets/71570108/b609e5dc-e31f-4eaa-a5fd-8d2b639ca018)
-
-
 
 ## Contribuições 🤝🔧
 
